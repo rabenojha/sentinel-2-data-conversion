@@ -1,1 +1,1 @@
-# tutorials
+Conversion of Sentinel-2 SAFE format to Zarr format

@@ -1,0 +1,19 @@
+coarsen_factor = 18
+boundary = 'trim'
+
+# Use B04 and B08
+red = ds.B04.coarsen(x=coarsen_factor, y=coarsen_factor, boundary=boundary).mean()
+nir = ds.B08.coarsen(x=coarsen_factor, y=coarsen_factor, boundary=boundary).mean()
+
+ndvi = (nir - red) / (nir + red)
+
+
+plt.figure(figsize=(12, 12))
+
+plt.imshow(ndvi, cmap='RdYlGn')  
+
+plt.colorbar(label='NDVI values') 
+plt.title('NDVI')
+plt.axis('off')
+
+plt.show()

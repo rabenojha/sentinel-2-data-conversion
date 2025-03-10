@@ -1,0 +1,10 @@
+# install these on your environment to run the notebook 
+
+xarray
+geopandas
+matplotlib
+numpy
+pandas
+rioxarray
+zarr
+

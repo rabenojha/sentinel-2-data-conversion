@@ -1,0 +1,22 @@
+# False color composite using Near Infrared, Red and Green bands
+# Feel free to coarsen the array. It will speed up the process
+
+
+# you can use 20m or 60m resolution as well
+dataset = xr.open_zarr(f'{name}.zarr', group="10m")
+
+nir = dataset.B08
+red = dataset.B04
+green = dataset.B03
+false_color_composite = np.stack([nir.values, red.values, green.values], axis=-1)
+
+
+plt.figure(figsize=(12, 12))
+
+# normalizing the array values
+plt.imshow(false_color_composite / np.max(false_color_composite))
+
+plt.title('False color composite using Sentinel-2 L2A product')
+plt.axis('off')
+plt.show()
+

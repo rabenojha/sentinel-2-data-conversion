@@ -5,5 +5,6 @@
 # Credentials should be inside quotation marks. 
 
 
-username = "************"
-password = "************"
+
+# username = "************"
+# password = "************"
